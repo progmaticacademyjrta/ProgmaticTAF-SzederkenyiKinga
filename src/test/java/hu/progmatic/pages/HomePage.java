@@ -22,4 +22,14 @@ public class HomePage {
         Assert.assertTrue(headerElement.isDisplayed());
         System.out.println("Homepage loaded properly.");
     }
+
+    public void clickOnMakeAppointmentButton (){
+        driver.get("https://katalon-demo-cura.herokuapp.com");
+        WebElement headerElement = driver.findElement(headerBy);
+        Assert.assertTrue(headerElement.isDisplayed());
+        System.out.println("Homepage loaded properly.");
+        WebElement makeAppointmentButton = driver.findElement(By.id("btn-make-appointment"));
+        makeAppointmentButton.click();
+        System.out.println("Clicked on the Make Appointment button");
+    }
 }
