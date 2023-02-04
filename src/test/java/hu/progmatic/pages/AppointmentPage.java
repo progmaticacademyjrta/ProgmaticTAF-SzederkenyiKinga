@@ -42,7 +42,7 @@ public class AppointmentPage {
         System.out.println("Clicked on Book Appointment button");
 
         Assert.assertEquals(driver.getCurrentUrl(), "https://katalon-demo-cura.herokuapp.com/appointment.php#summary");
-        
+
 
     }
 }
