@@ -11,6 +11,8 @@ public class HomePageTests extends DriverBaseTest {
     public void homepageLoadedTest() {
         homePage = new HomePage(driver, wait);
         homePage.loadHomePage();
-        homePage.clickOnMakeAppointmentButton();
+
     }
+
+
 }

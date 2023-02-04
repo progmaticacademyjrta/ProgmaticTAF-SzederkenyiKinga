@@ -31,5 +31,7 @@ public class HomePage {
         WebElement makeAppointmentButton = driver.findElement(By.id("btn-make-appointment"));
         makeAppointmentButton.click();
         System.out.println("Clicked on the Make Appointment button");
+        Assert.assertEquals(driver.getCurrentUrl(),"https://katalon-demo-cura.herokuapp.com/profile.php#login");
+
     }
 }
