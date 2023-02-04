@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 public class AppointmentPage {
     WebDriver driver;
@@ -28,6 +29,19 @@ public class AppointmentPage {
         healthcareProgramRadio.click();
         System.out.println("Chosen "+ healthcareProgramRadio);
 
+        WebElement visitDateInput = driver.findElement(By.id("txt_visit_date"));
+        visitDateInput.sendKeys("04/02/2023");
+        System.out.println("Wrote date: " + visitDateInput);
+
+        WebElement commentInput = driver.findElement(By.name("comment"));
+        commentInput.sendKeys("Mindjárt kész vagyok!");
+        System.out.println("Wrote comment: " + commentInput);
+
+        WebElement bookAppointmentButton = driver.findElement(By.id("btn-book-appointment"));
+        bookAppointmentButton.click();
+        System.out.println("Clicked on Book Appointment button");
+
+        Assert.assertEquals(driver.getCurrentUrl(), "https://katalon-demo-cura.herokuapp.com/appointment.php#summary");
         
 
     }
