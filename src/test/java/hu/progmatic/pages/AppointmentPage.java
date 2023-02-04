@@ -19,15 +19,15 @@ public class AppointmentPage {
         this.wait = wait;
     }
 
-    public void loadAppointmentPageAndMakeAnAppointmentTest(){
+    public void loadAppointmentPageAndMakeAnAppointmentTest() {
         loginPage.validUsernameAndValidPwTest();
         Select facilityDropdown = new Select(driver.findElement(By.id("combo_facility")));
         facilityDropdown.selectByVisibleText("Hongkong CURA Healthcare Center");
-        System.out.println("Chosen "+ facilityDropdown);
+        System.out.println("Chosen " + facilityDropdown);
 
         WebElement healthcareProgramRadio = driver.findElement(By.id("radio_program_none"));
         healthcareProgramRadio.click();
-        System.out.println("Chosen "+ healthcareProgramRadio);
+        System.out.println("Chosen " + healthcareProgramRadio);
 
         WebElement visitDateInput = driver.findElement(By.id("txt_visit_date"));
         visitDateInput.sendKeys("04/02/2023");

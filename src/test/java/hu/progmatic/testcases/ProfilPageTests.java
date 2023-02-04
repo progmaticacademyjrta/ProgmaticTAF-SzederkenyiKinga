@@ -9,7 +9,7 @@ public class ProfilPageTests extends DriverBaseTest {
     ProfilPage profilPage;
 
     @Test
-    public void loadProfilPageTest(){
+    public void loadProfilPageTest() {
         profilPage = new ProfilPage(driver, wait);
         profilPage.loadProfilPage();
     }

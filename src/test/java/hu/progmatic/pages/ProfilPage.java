@@ -13,12 +13,12 @@ public class ProfilPage {
 
     LoginPage loginPage;
 
-    public ProfilPage(WebDriver driver, WebDriverWait wait){
+    public ProfilPage(WebDriver driver, WebDriverWait wait) {
         this.driver = driver;
         this.wait = wait;
     }
 
-    public void loadProfilPage(){
+    public void loadProfilPage() {
         loginPage.validUsernameAndValidPwTest();
         WebElement hamburgerMenu = driver.findElement(By.id("menu-toggle"));
         hamburgerMenu.click();

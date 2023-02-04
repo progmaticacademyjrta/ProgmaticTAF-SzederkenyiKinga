@@ -41,7 +41,7 @@ public class LoginPage {
 
     }
 
-    public void validUsernameAndValidPwTest(){
+    public void validUsernameAndValidPwTest() {
         loadLoginPage();
         WebElement userName = driver.findElement(By.name("username"));
         userName.sendKeys("John Doe");
