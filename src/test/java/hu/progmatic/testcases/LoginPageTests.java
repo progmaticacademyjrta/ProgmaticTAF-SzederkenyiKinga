@@ -10,8 +10,10 @@ public class LoginPageTests extends DriverBaseTest {
 
     @Test
     public void navigateToLoginPageAndMakeTestsOnItTest() {
-        loginPage.LoadLoginPage();
-        loginPage.WrongUsernameAndWrongPwTest();
+        loginPage = new LoginPage(driver, wait);
+        loginPage.loadLoginPage();
+        loginPage.wrongUsernameAndWrongPwTest();
+        loginPage.validUsernameAndValidPwTest();
 
     }
 

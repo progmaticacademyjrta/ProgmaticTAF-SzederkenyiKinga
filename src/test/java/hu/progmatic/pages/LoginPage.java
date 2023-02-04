@@ -16,30 +16,15 @@ public class LoginPage {
         this.wait = wait;
     }
 
-    public WebDriver getDriver() {
-        return driver;
-    }
 
-    public void setDriver(WebDriver driver) {
-        this.driver = driver;
-    }
-
-    public WebDriverWait getWait() {
-        return wait;
-    }
-
-    public void setWait(WebDriverWait wait) {
-        this.wait = wait;
-    }
-
-    public void LoadLoginPage(){
+    public void loadLoginPage() {
         driver.get("https://katalon-demo-cura.herokuapp.com/profile.php#login");
         WebElement headerElement = driver.findElement(headerBy);
         Assert.assertTrue(headerElement.isDisplayed());
         System.out.println("Login page loaded properly.");
     }
 
-    public void WrongUsernameAndWrongPwTest(){
+    public void wrongUsernameAndWrongPwTest() {
         driver.get("https://katalon-demo-cura.herokuapp.com/profile.php#login");
         WebElement headerElement = driver.findElement(headerBy);
         Assert.assertTrue(headerElement.isDisplayed());
@@ -51,6 +36,21 @@ public class LoginPage {
         WebElement loginButton = driver.findElement(By.id("btn-login"));
         loginButton.click();
         System.out.println("Clicked on login button");
+        WebElement alert = driver.findElement(By.className("lead text-danger"));
+        Assert.assertEquals(alert.getText(), "Login failed! Please ensure the username and password are valid.");
+
+    }
+
+    public void validUsernameAndValidPwTest(){
+        loadLoginPage();
+        WebElement userName = driver.findElement(By.name("username"));
+        userName.sendKeys("John Doe");
+        WebElement password = driver.findElement(By.name("password"));
+        password.sendKeys("ThisIsNotAPassword");
+        WebElement loginButton = driver.findElement(By.id("btn-login"));
+        loginButton.click();
+        System.out.println("Clicked on login button");
+        Assert.assertEquals(driver.getCurrentUrl(), "https://katalon-demo-cura.herokuapp.com/#appointment");
 
     }
 }
