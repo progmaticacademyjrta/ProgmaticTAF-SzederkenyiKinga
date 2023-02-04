@@ -8,7 +8,7 @@ public class AppointmentPageTests extends DriverBaseTest {
 
     AppointmentPage appointmentPage;
 
-    @Test
+    @Test(description = "Booking an appointment")
     public void navigateToAppointmentPageAndMakeTestsOnItTest() {
         appointmentPage = new AppointmentPage(driver, wait);
         appointmentPage.loadAppointmentPageAndMakeAnAppointmentTest();

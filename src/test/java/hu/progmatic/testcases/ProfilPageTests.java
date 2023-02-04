@@ -8,7 +8,7 @@ public class ProfilPageTests extends DriverBaseTest {
 
     ProfilPage profilPage;
 
-    @Test
+    @Test(description = "After login test the profile page usability")
     public void loadProfilPageTest() {
         profilPage = new ProfilPage(driver, wait);
         profilPage.loadProfilPage();

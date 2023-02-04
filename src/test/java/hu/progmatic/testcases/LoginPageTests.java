@@ -8,7 +8,7 @@ public class LoginPageTests extends DriverBaseTest {
 
     LoginPage loginPage;
 
-    @Test
+    @Test(description = "Navigate the login page and test the login feature")
     public void navigateToLoginPageAndMakeTestsOnItTest() {
         loginPage = new LoginPage(driver, wait);
         loginPage.loadLoginPage();
